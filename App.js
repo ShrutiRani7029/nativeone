@@ -1,34 +1,27 @@
 
-import React from 'react';
-
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  Button
-} from 'react-native';
-
+import React, { useState } from 'react';
+import { View, Text, Button } from 'react-native';
 
 const App = () => {
-  let newdata=100;
-  const fruit=(val)=>{
-    console.warn(newdata);
+  const [newdata, setNewData] = useState(102);
+
+  const fruit = (val) => {
+    setNewData(20); // Update state using setNewData function
+    console.warn(newdata); // This will log 100, not the updated value
   }
+
   return (
     <View>
-
-      <Text style={{fontSize:30}}>{newdata}</Text>
-      <Button title='Press Here' onPress={()=>fruit ('hello')} color={'green'}></Button>
+      <Text style={{ fontSize: 30 }}>{newdata}</Text>
+      <Button title='Press Here' onPress={() => fruit('hello')} color={'green'}></Button>
     </View>
   );
-  };
+};
+
+export default App;
+
 
 
 
   
 
-export default App;
