@@ -14,10 +14,15 @@ import {
 
 
 const App = () => {
+  let newdata=100;
+  const fruit=(val)=>{
+    console.warn(newdata);
+  }
   return (
     <View>
-      <Text style={{fontSize:30}}>Hi natives</Text>
-      <Button title='Press Here'></Button>
+
+      <Text style={{fontSize:30}}>{newdata}</Text>
+      <Button title='Press Here' onPress={()=>fruit ('hello')} color={'green'}></Button>
     </View>
   );
   };
